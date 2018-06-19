@@ -1,11 +1,3 @@
-// import * as firebase from "firebase";
-
-// import { FirebaseConfig } from "../config/keys";
-// firebase.initializeApp(FirebaseConfig);
-
-// const databaseRef = firebase.database().ref();
-// export const todosRef = databaseRef.child("todos");
-
 var firebase = require("firebase/app");
 require("firebase/firestore");
 
@@ -15,5 +7,6 @@ const FirebaseConfig = {
   databaseURL: "https://tutorial-frontend.firebaseio.com"
 };
 firebase.initializeApp(FirebaseConfig);
-const databaseRef = firebase.database().ref();
-export const todosRef = databaseRef.child("todos");
+console.log('firebase', firebase)
+// const databaseRef = firebase.database().ref();
+// export const todosRef = databaseRef.child("todos");
