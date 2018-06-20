@@ -10,6 +10,7 @@ class ToDoListItem extends Component {
 
   render() {
     const { todoId, todo } = this.props;
+    console.log('todoId, todo', todoId, todo.title)
     return (
       <div key="toDoName" className="col s10 offset-s1 to-do-list-item teal">
         <h4>

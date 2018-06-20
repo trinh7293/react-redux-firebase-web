@@ -47,7 +47,9 @@ class ToDoList extends Component {
 
   renderToDos() {
     const { data } = this.props;
+    // console.log(data)
     const toDos = _.map(data, (value, key) => {
+      // console.log('value, key', value, key)
       return <ToDoListItem key={key} todoId={key} todo={value} />;
     });
     if (!_.isEmpty(toDos)) {
