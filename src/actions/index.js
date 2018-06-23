@@ -25,16 +25,20 @@ export const completeToDo = completeToDoId => async dispatch => {
 
 export const fetchToDos = () => async dispatch => {
 	let resultObj = {}
-	todosRef.get()
-		.then((snapshot) => {
-			snapshot.forEach((doc) => {
-				resultObj = {
-					...resultObj,
-					[doc.id]: {
-						...doc.data()
-					}
+	todosRef.onSnapshot(querySnapshot => {
+		// console.log(1)
+		let resultObjChange = {}
+		querySnapshot.forEach(doc => {
+			resultObjChange = {
+				...resultObjChange,
+				[doc.id]: {
+					...doc.data()
 				}
-			});
+			}
+		});
+		resultObj = {
+			...resultObjChange
+		}
 			// console.log('resultArr', resultArr)
 			dispatch({
 				type: FETCH_TODOS,

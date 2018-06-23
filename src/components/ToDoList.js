@@ -30,7 +30,7 @@ class ToDoList extends Component {
         <div id="todo-add-form" className="col s10 offset-s1">
           <form onSubmit={this.handleFormSubmit}>
             <div className="input-field">
-              <i className="material-icons prefix">note_add</i>
+              {/*<i className="material-icons prefix">note_add</i>*/}
               <input
                 value={addFormValue}
                 onChange={this.handleInputChange}
